@@ -3,20 +3,20 @@ name: Dependant-yas-er
 on: push
 jobs:
   ubuntu:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - run: date
   windows: 
-    run-on: windows-latest
+    runs-on: windows-latest
     steps:
     - run: date
   macos:
-    run-on:  macos-latest
+    runs-on:  macos-latest
     steps:
     - run: date
     
-  dependant:
-    needs: [ubunto , windows , macos]
-    run-on:  windows-latest
+  depends:
+    needs: [ ubuntu , windows , macos ]
+    runs-on:  windows-latest
     steps:
     - run: date
